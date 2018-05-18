@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body><br>
+
+		<div class = "sidenav">
+
+			<h4 align = "center"> Experimental Determination of Layer Height of Granular Flow down Rough Inclined Surfaces </h4>
+							
+				<div class = "foot">
+					<p align="center">  Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, Data Science, and CFD. For more projects, 
+					<a href="url">click here.</a>
+
+					</p>
+				</div>
+
+			</div>
+
+
+		<div class = "main">
+
+			<div class = "top">
+				<h4 align = "center"> Experimental Determination of Layer Height of Granular Flow down Rough Inclined Surfaces </h4>
+	
+				
+					<p aligh="center">  Rishabh Datta is a 4th Year Mechanical Engineering student at Georgia Tech, Atlanta. Rishabh is interested in Green Technology, Concentrated Solar Power, Renewable Energy, Data Science, and CFD. For more projects, 
+					<a href="url">click here.</a>
+
+					</p>
+				</div><br>
+
+
+
+	<h2> Overview</h2>
+	
+	<p> The objective of this project is to experimentally determine the layer height <i>h</i> for granular flow of particles down rough inclined surfaces optically from images of the flow. Layer height <i>h</i> and critical layer thickness <i>h<sub>stop</sub></i> are of significance to determine the flow line equation, and the velocity profile of the flow as shown in the following equations.
+	</p>
+
+	<p><p align="center"><img src="http://latex.codecogs.com/gif.latex?\dpi{100}&space;$$tan(\theta)&space;=&space;tan(\theta_{1})&space;&plus;&space;[tan(\theta_{2})&space;-&space;tan(\theta_{1})]exp(-h_{stop}/Ld)$$" title="$$tan(\theta) = tan(\theta_{1}) + [tan(\theta_{2}) - tan(\theta_{1})]exp(-h_{stop}/Ld)$$" /></p>
+
+	<p align = "center"><img src="http://latex.codecogs.com/gif.latex?\dpi{100}&space;$$\bar{u}/{\surd}gh&space;=&space;-\gamma&space;&plus;&space;\beta*h/h_{stop}$$" title="$$\bar{u}/{\surd}gh = -\gamma + \beta*h/h_{stop}$$" /></p>
+
+    <p>&alpha; and &gamma; are experimentally determined fitting coefficients.</p> 
+
+	<p> This project was completed at the Solar Fuels Laboratory, Georgia Tech, under the supervision of  Dr. Peter Loutzenhiser.</p>
+
+
+	<h2> Methodology </h2>
+
+	<p> Particles used in this project were CAM-28 (Al Doped Calcium Manganate) which are expected to have a mean diameter of about 41 microns. These particles were flowed down a rough inclined surface at a known angle of inclination &theta; for which uniform flow was observed. Images of the flow were captured suing the FASTCAM SA-3 high speed camera positioned normal to the surface. A laser beam was positioned to shoot a cross-beam across the surface. The set-up is shown below.</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig1.png" alt="figure 1"/></p>
+
+	<p align="center">Figure 1: Experimental Set-Up</p>
+
+	<p> Layer height and critical layer thickness were measured optically from the displacement of the laser on the surface during flow using teh following relationship</p>
+
+	<p align="center"><img src="http://latex.codecogs.com/gif.latex?$$h&space;=&space;d*tan&space;(\theta&plus;\alpha)$$" title="$$h = d*tan (\theta+\alpha)$$" /></p>
+
+		
+<h2> Calibration </h2>
+
+<p> The calibration image as shown in Figure 2 consists of a checkerboard image of known dimensions taped to the surface. This image was used to perform persective correction and determine the scale using MATLAB's Image Processing Toolkit. As shown in Figure 2, the corners of the checkerboard were identified, and then transformed to ensure that the dimension of each individual square is identical in the transformed image.<p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig2.png" alt="figure 2"/></p>
+
+	<p align="center">Figure 2: Calibration Image</p>
+
+	<p>The scale in mm/px is determined from the transformed calibration image as shown in Figure 3.</p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig3.png" alt="figure 3"/></p>
+
+	<p align="center">Figure 3: Transformed Calibration Image</p>
+
+	<h2> Determination of Layer Height </h2>
+
+		<p>The transformation obatined from the calibration was applied to the control image (image of surface before flow) and to the test images (images of surface during flow and after flow).A RANSAC algorithm was used to statistically fit a line to the laser beam. The average displacement was calculated from the deviation in the laser position between the test image and control image as shown in Figures 4 and 5.</p>
+
+		<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig4.png" alt="figure 4"/></p>
+
+		<p align="center">Figure 4: Fitting a curve to the laser beam on the transformed control image</p>
+
+		<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/determining-layer-height/master/images/fig5.png" alt="figure 5"/></p>
+
+		<p align="center">Figure 5: Fitting a curve to the laser beam on the transformed test image</p>
+
+		<p> Average values of layer height and critical layer thickness were then determined from the mean displacement of the laser beam using the geometric relationship between height and displacemnt.</p>
+
+		<h2> Results </h2>
+
+		<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/granular-flow/master/images/h.png" alt="figure 6"/></p>
+
+	<p align="center"> Figure 6: layer height with angle of inclination</p>
+
+	<p> Layer height was observed to decrease with an increase in angle of inclination. This is because for the same mass flow rate, the increase in average velocity (due to steeper slope) causes a decrease in the height of the flowing bed. </p>
+
+	<p align="center"><img class = "figure" src="https://raw.githubusercontent.com/rdatta31/granular-flow/master/images/hstop.png" alt="figure 7"/></p>
+
+	<p align = "center"> Figure 7: Variation of  h<sub>stop</sub> with the angle of inclination &theta; </p>
+
+	<p>Figure 2 shows the variation of critical thickness with the angle of inclination, as well as the expected variation obtained from the flow line equation. The experimental values fit the model well for shallower angles, but demonstrate significant noise at steeper angles, for which the image processing method used to determine h and h<sub>stop</sub> was less accurate. The displacement of the laser was too small at higher inclinations where height was only a few layers of particles thcik. </p>
+
+	<h2> Conclusions</h2>
+
+	<p> The method used is more accurate to lower angles of inclination, for which the layer height of granular flow is larger. For steeper angles close to the upper threshold where uniform flow is observed, the method detects little displacemnt of the laser. This is an issue, especially for small particles like CAM-28. The error may be reduced by usinga  finer laser, or higher resolution on teh camera. Nevertheless, the method does provide a viable alternative to using a more expensive laser displacement sensor.
+
+		</div>
+		
+
+
+			</body>
+			</html>
