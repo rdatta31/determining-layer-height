@@ -53,11 +53,15 @@
 }
 
 .figure {
-    width:400px;
+    width:70%;
     height:auto;
     padding-top: 10px;
     padding-bottom: 10px;
 
+}
+
+img{
+    max-width: 95%;
 }
 
 /* On bigger screens, where height is more than 800px, change the style of the sidebar (less padding and a smaller font size) */
